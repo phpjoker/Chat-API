@@ -3279,14 +3279,16 @@ class WhatsProt
                                 array(
                                     $this->phoneNumber,
                                     $node->getAttribute('from'),
-                                    $node->getChild(0)->getChild(0)->getAttribute('jid')
+                                    $node->getChild(0)->getChild(0)->getAttribute('jid'),
+                                    $node->getAttribute('participant')
                                 ));
                     } else if ($node->hasChild('add')) {
                         $this->eventManager()->fire("onGroupsParticipantsAdd",
                             array(
                                 $this->phoneNumber,
                                 $node->getAttribute('from'),
-                                $node->getChild(0)->getChild(0)->getAttribute('jid')
+                                $node->getChild(0)->getChild(0)->getAttribute('jid'),
+                                $node->getAttribute('participant')
                             ));
                     }
                     else if ($node->hasChild('create')) {
